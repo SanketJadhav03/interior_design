@@ -137,8 +137,8 @@ button{
         <input type="text" placeholder="Customer Name" id="customer_name" name="customer_name">
 
         <label for="password">Mobile Number</label>
-        <input type="text" maxlength="10" placeholder="Mobile" id="customer_phone" name="customer_phone">
-
+        <!-- <input type="text" maxlength="10" placeholder="Mobile" id="customer_phone" name="customer_phone"> -->
+        <input type="tel" maxlength="10" placeholder="Mobile" id="customer_phone" name="customer_phone" pattern="[0-9]{10}" inputmode="numeric" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 
         <label for="password">Customer Email</label>
         <input type="email" placeholder="Customer Email" id="customer_email" name="customer_email">
