@@ -114,7 +114,7 @@
         <li>Need assistance? <a href="contact.php">Contact our design specialists</a>.</li>
     </ul>
 
-    <p>Explore more <a href="new_arrivals.php">luxury interior collections</a> while you wait!</p>
+    <p>Explore more <a href="index.php"> Interior Design collections</a> while you wait!</p>
 
     <a href="index.php" class="btn">Return to Home</a>
 </div>

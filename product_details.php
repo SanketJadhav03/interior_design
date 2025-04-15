@@ -171,10 +171,10 @@ $row = $result->fetch_assoc();
 
          </div>
          <div class="col-md-4 col-sm-12">
-            <div class="price-box-right">
-               <h3> MRP <del class="h4"><?= $row["product_price"] ?></del></h3>
+            <div class="price-box-right" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+               <h3> Rs <del class="h4"><?= $row["product_price"] ?></del></h3>
                <h3> Dis <strong class="h4"><?= $row["product_dis"]  ?>%</strong></h3>
-               <h3> Sale Price <strong class="h4"><?= $row["product_price"] - $row["product_dis_value"] ?></strong></h3>
+               <h3> Rs <strong class="h4"><?= $row["product_price"] - $row["product_dis_value"] ?></strong></h3>
                <a href="javascript:void(0);" class="wishlist-btn" data-id="<?= $row['product_id'] ?>"> <i class="fa fa-heart"></i> &nbsp; Add To Wishlist</a>
                <a href="javascript:void(0);" class="cart-btn" data-id="<?= $row['product_id'] ?>"> <i class="fa fa-shopping-cart"></i> &nbsp; Add To Cart</a>
             </div>

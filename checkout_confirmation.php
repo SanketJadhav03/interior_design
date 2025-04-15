@@ -37,7 +37,7 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
-<div class="product-page-main">
+<div class="product-page-main" style="font-family: sans-serif;">
     <div class="container mt-4">
         <div class="row clearfix">
             <div class="prod-page-title text-center " style="padding: 60px;">
@@ -55,12 +55,12 @@ while ($row = $result->fetch_assoc()) {
 
             <?php foreach ($cart_items as $item) { ?>
                 <tr>
-                    <td><?= $item['product_name']; ?></td>
-                    <td>₹<?= number_format(($item['product_price'] - $item["product_dis_value"]), 2); ?></td>
-                    <td>
+                    <td style="font-size: 16px;font-weight: bold;"><?= $item['product_name']; ?></td>
+                    <td style="font-size: 16px;font-weight: bold;">₹ <?= number_format(($item['product_price'] - $item["product_dis_value"]), 2); ?></td>
+                    <td style="font-size: 16px;font-weight: bold;">
                         <input type="number" class="qty form-control" data-id="<?= $item['cart_id']; ?>" value="<?= $item['cart_product_qty']; ?>" min="1">
                     </td>
-                    <td class="total-price">₹<?= number_format(($item['product_price'] - $item["product_dis_value"]) * $item['cart_product_qty'], 2); ?></td>
+                    <td class="total-price" style="font-size: 16px;font-weight: bold;">₹ <?= number_format(($item['product_price'] - $item["product_dis_value"]) * $item['cart_product_qty'], 2); ?></td>
                 </tr>
             <?php } ?>
         </table>
@@ -122,7 +122,7 @@ while ($row = $result->fetch_assoc()) {
             </div>
 
             <div class="prod-page-title text-center" style="padding: 20px;">
-                <h3 style="margin-bottom: 15px">Total Price: ₹<span id="grandTotal"><?= number_format($total_price, 2); ?></span></h3>
+                <h3 style="font-weight: bold;margin-bottom: 15px">Total Price: ₹ <span id="grandTotal"><?= number_format($total_price, 2); ?></span></h3>
                 <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Place Order</button>
             </div>
         </form>

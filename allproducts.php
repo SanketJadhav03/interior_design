@@ -49,10 +49,10 @@ $categoryResult = mysqli_query($conn, $categoryQuery);
                                         </div>
                                     </div>
 
-                                    <div style="display: flex; justify-content: space-between;">
+                                    <div style="display: flex; justify-content: space-between;font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
                                         <p><strong>Dis: </strong> <?= $product["product_dis"] ?>%</p>
-                                        <del style="font-weight: bold;">MRP: <?= $product["product_price"] ?></del>
-                                        <p><strong>Price: </strong> <?= $product["product_price"] - $product["product_dis_value"] ?></p>
+                                        <del style="font-weight: bold;">Rs <?= $product["product_price"] ?></del>
+                                        <p style="font-weight: bold;"><strong>Rs </strong> <?= $product["product_price"] - $product["product_dis_value"] ?></p>
                                     </div>
                                     <div class="prod-btn text-center">
                                         <a href="javascript:void(0);" class="wishlist-btn" data-id="<?= $product['product_id'] ?>">
