@@ -136,15 +136,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["product_update"])) {
 
                     <div class="col-3 mt-3">
                         <label for="product_price">Product Price <span class="text-danger">*</span></label>
-                        <input type="number" step="0.01" value="<?= $product['product_price'] ?>" class="form-control" name="product_price" required oninput="calculateDiscountValue()">
+                        <input type="number" step="0.01" value="<?= $product['product_price'] ?>" class="form-control" name="product_price" id="product_price" required oninput="calculateDiscountValue()">
                     </div>
                     <div class="col-3 mt-3">
                         <label for="product_dis">Product Discount (%)</label>
-                        <input type="number" value="<?= $product['product_dis'] ?>" class="form-control" name="product_dis" oninput="calculateDiscountValue()">
+                        <input type="number" value="<?= $product['product_dis'] ?>" class="form-control" name="product_dis" id="product_dis" oninput="calculateDiscountValue()">
                     </div>
                     <div class="col-3 mt-3">
                         <label for="product_dis_value">Discount Value</label>
-                        <input type="number" step="0.01" value="<?= $product['product_dis_value'] ?>" class="form-control" name="product_dis_value" readonly>
+                        <input type="number" step="0.01" value="<?= $product['product_dis_value'] ?>" class="form-control" name="product_dis_value" id="product_dis_value" readonly>
                     </div>
 
                     <div class="col-3 mt-3">
@@ -180,5 +180,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["product_update"])) {
         </div>
     </form>
 </div>
+
+<script>
+function calculateDiscountValue() {
+    const price = parseFloat(document.getElementById("product_price").value);
+    const discount = parseFloat(document.getElementById("product_dis").value);
+    if (!isNaN(price) && !isNaN(discount)) {
+        document.getElementById("product_dis_value").value = ((price * discount) / 100).toFixed(2);
+    } else {
+        document.getElementById("product_dis_value").value = '';
+    }
+}
+</script>
 
 <?php include "../component/footer.php"; ?>
